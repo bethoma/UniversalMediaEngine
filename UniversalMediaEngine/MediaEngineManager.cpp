@@ -112,6 +112,21 @@ End:
 	return hr;
 }
 
+HRESULT MediaEngineManager::PlayMfByteStream(IMFByteStream* mfByteStream)
+{
+	HRESULT hr = E_FAIL;
+
+	ComPtr<IMFMediaEngineEx> spMediaEngineEx = nullptr;
+
+	CHR(spMediaEngine.As<IMFMediaEngineEx>(&spMediaEngineEx));
+
+	CHR(spMediaEngineEx->SetSourceFromByteStream(mfByteStream, BSTR("")));
+	CHR(spMediaEngineEx->Play());
+
+End:
+	return hr;
+}
+
 HRESULT MediaEngineManager::Pause()
 {
 	HRESULT hr = E_FAIL;

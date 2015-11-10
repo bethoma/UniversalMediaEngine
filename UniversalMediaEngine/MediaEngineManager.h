@@ -1,5 +1,7 @@
 #pragma once
 
+using namespace Windows::Storage::Streams;
+
 namespace Microsoft {
 	namespace Maker {
 		namespace Media {
@@ -29,6 +31,8 @@ public:
 	HRESULT TearDown();
 
 	HRESULT PlayUrl(BSTR url);
+
+	HRESULT PlayMfByteStream(IMFByteStream* mfByteStream);
 
 	HRESULT Pause();
 
