@@ -115,15 +115,18 @@ End:
 HRESULT MediaEngineManager::PlayMfByteStream(IMFByteStream* mfByteStream)
 {
 	HRESULT hr = E_FAIL;
-
+	BSTR url = nullptr;
 	ComPtr<IMFMediaEngineEx> spMediaEngineEx = nullptr;
 
 	CHR(spMediaEngine.As<IMFMediaEngineEx>(&spMediaEngineEx));
-
-	CHR(spMediaEngineEx->SetSourceFromByteStream(mfByteStream, BSTR("")));
+	url = SysAllocString(L"file://");
+	CHR(spMediaEngineEx->SetSourceFromByteStream(mfByteStream, url));
 	CHR(spMediaEngineEx->Play());
 
 End:
+	if (nullptr != url)
+		SysFreeString(url);
+
 	return hr;
 }
 
