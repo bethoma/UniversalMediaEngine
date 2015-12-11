@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("speechSynthesisSample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
+<<<<<<< HEAD
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("speechSynthesisSample")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
+=======
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("speechSynthesisSample")]
+[assembly: AssemblyCopyright("Copyright Microsoft Corporation ©  2015")]
+>>>>>>> Tests
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
